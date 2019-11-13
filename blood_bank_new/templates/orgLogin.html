@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+{% include 'header.html' %}
+{% include 'orgleft.html' %}
+<div style="margin-top: -80px;">
+<h3 style="margin-left:550px; color: green;">Organization Login</h3>
+<form action="{% url 'checkorg' %}" method="post">
+ <table border="1" align="center" style="margin-left:500px; margin-top:-10px;">
+    {% csrf_token %}
+     <tr> <td>Organization Name: <input type="text" name="d1" required style="width:220px;"></td></tr>
+     <tr> <td>Password:<input type="password" name="d2" required style="width: 200px;"></td></tr>
+     <tr><th><button type="submit">Login</button></th></tr>
+ </table>
+</form>
+
+</div>

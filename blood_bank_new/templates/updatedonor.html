@@ -1,0 +1,47 @@
+{% load staticfiles %}
+
+{% include 'header.html' %}
+{% include 'leftpanel.html' %}
+<div style="margin-top: -190px;">
+<h3 style="margin-left:550px; color: green;">Donor Registration</h3>
+<form action="{% url 'savedonor' %}" method="post">
+ <table border="1" align="center" style="margin-left:500px; margin-top:-10px;">
+    {% csrf_token %}
+     <tr> <td> Name: <input type="text" name="d1" required style="width:220px;"></td></tr>
+     <tr> <td>UserId: <input type="text" name="d2" required style="width:220px;"></td></tr>
+     <tr> <td>Password:<input type="password" name="d3" required style="width: 200px;"></td></tr>
+     <tr> <td>Gender:<input type="radio" name="d4" required value="Male">Male
+         <input type="radio" name="d4" required value="Female">FeMale
+     </td></tr>
+     <tr> <td>Email: <input type="email" name="d5" required style="width:220px;"></td></tr>
+     <tr> <td>Contact: <input type="number" name="d6" required style="width:220px;"></td></tr>
+     <tr> <td>Blood Group: <select name="d7">
+                    <option value="A">A</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B">B</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB">AB</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O">O</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option></select></td></tr>
+     <tr><td>State : <select name="d8">
+                    <option value="telangana">Telangana</option>
+                    <option value="andra">Andra Pradesh</option>
+                    <option value="rayalaseema">Rayalaseema</option>
+     </select></td></tr>
+      <tr> <td>City: <input type="text" name="d9" required style="width:220px;"></td></tr>
+     <tr> <td>Age: <input type="number" name="d10" required style="width:220px;"></td></tr>
+     <tr> <td>Weight: <input type="number" name="d11" required style="width:220px;"></td></tr>
+     <tr> <td>Last Donate Date: <input type="date" name="d12" required style="width:220px;"></td></tr>
+
+     <tr><th><button type="submit">Save</button></th></tr>
+ </table>
+</form>
+</div>
+{% if msg %}
+    <h2 style="margin-left: 250px;color: #4CAF50">{{ msg }}</h2>
+{% endif %}

@@ -1,0 +1,71 @@
+{% load staticfiles %}
+
+<style>
+    header {
+  background-color: #666;
+  padding: 1px;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+   width: 300px;
+    alignment: center;
+}
+ button
+ {
+  background-color: #666;
+  padding: 1px;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+   width: 120px;
+    height: 32px;
+    alignment: center;
+margin-left: 100px;
+ }
+</style>
+ {% include 'header.html' %}
+   {% include 'leftpanel.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BLOOD BANK</title>
+</head>
+<body >
+<div style="margin-top: -200px;">
+    <header style="margin-left: 462px; margin-top:80px;">
+  <h2>LOGIN ADMIN/USER</h2>
+</header><br>
+
+ <form method="post" action="{% url 'checkuser' %}">
+     {% csrf_token %}
+<table border="0" align="center" style="margin-left:455px; margin-top:10px;">
+    <tr>
+        <td>Username:</td></tr>
+    <tr>
+       <td> <input type="text" name="username" style="height: 40px; width: 300px;" required></td>
+    </tr>
+
+    <tr>
+        <td>Password:</td></tr>
+    <tr>
+       <td> <input type="password" name="password" style="height: 40px; width: 300px;" required></td>
+    </tr>
+     <tr>
+        <td>
+           <button type="submit">Submit</button>
+
+        </td>
+    </tr>
+</table>
+ </form>
+
+</div>
+</body>
+</html>
+
+{%if error %}
+   <h2 style="color: red;">{{ error }}</h2>
+{% comment %} {% else %}
+    <h2 style="color: brown">{{ message }}</h2>{% endcomment %}
+{% endif %}

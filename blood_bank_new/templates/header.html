@@ -1,0 +1,65 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 80%;
+  background-color: #555;
+  overflow: auto;
+    margin-left: 200px;
+}
+.navbar a {
+  float: left;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 15%; /* Four links of equal widths */
+  text-align: center;
+  margin-left: 50px;
+}
+.navbar a:hover {
+  background-color:#4CAF50;
+}
+.navbar a.active {
+  background-color: #4CAF50;
+}
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 25%;
+    text-align: left;
+  }
+}
+</style>
+<body>
+<table align="center" border="0">
+        <tr>
+            <th rowspan="2">
+                <img src="{% static 'images/blood-bank.png' %}" width="150" height="100">
+            </th>
+            <th>
+                <font size="6" color="red" >
+                    BLOOD DONAR WEB PORTAL
+                </font>
+            </th>
+        </tr>
+    </table>
+<br>
+
+<div class="navbar" style="margin-bottom:20px;">
+  <a class="" href="{% url 'main' %}">Home</a>
+  <a href="{% url 'login' %}">Admin</a>
+  <a href="{% url 'donor' %}">Donor</a>
+  <a href="{% url 'orglogin' %}">Organizations</a>
+  <a href="#">FAQs</a>
+</div>
+
+</body>
+</html>

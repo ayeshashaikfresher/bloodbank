@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.vertical-menu {
+  width: 200px;
+}
+.vertical-menu a {
+  background-color: #eee;
+  color: green;
+  display: block;
+  padding: 14px;
+  text-decoration: none;
+}
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="vertical-menu">
+  <a href="#">Donor</a>
+  <a href="#">Blood Bank</a>
+  <a href="#">Hospitals</a>
+  <a href="#">Clinic</a>
+</div>
+
+
+{% comment %}
+<div class="vertical-menu">
+  <a href="{% url 'updatedonor'%}">Profile</a>
+  <a href="{% url 'logoutDonor' %}">Logout</a>
+ </div>
+{% endcomment %}
+</body>
+</html>

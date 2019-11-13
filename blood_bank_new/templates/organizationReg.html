@@ -1,0 +1,37 @@
+         {% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Bank</title>
+</head>
+{% include 'header.html' %}
+<img src="{% static 'images/admin.png' %}" style=" width:100px;height:100px;margin-left:50px;margin-top:-100px;">
+   {% include 'left.html' %}
+<body>
+<div style="margin-top: -190px;">
+
+<h1 style="margin-left:500px;">Organization Registration</h1>
+<form action="{% url 'saveOrg' %}" method="post">
+ <table border="2" align="center" style="margin-left:500px; margin-top:10px;">
+    {% csrf_token %}
+    <tr><td width="350px">Organization Id: {{ data.org_id }}</td></tr>
+     <tr> <td>Organization Name: {{ data.org_name }}</td></tr>
+     <tr> <td>Organization Address: {{ data.org_address }}</td></tr>
+     <tr><td>Country: {{ data.org_country }}</td></tr>
+     <tr> <td>State: {{ data.org_state }}</td></tr>
+     <tr><td>City: {{ data.org_city }}</td></tr>
+     <tr><td>Email: {{ data.org_email }}</td></tr>
+     <tr><td>Password: {{ data.org_password }}</td></tr>
+     <tr><td>Contact No: {{ data.org_contact }}</td></tr>
+     <tr><th><button type="submit">Save</button></th></tr>
+
+ </table>
+</form>
+
+</div>
+{% if msg %}
+    <h2 style="color: #4CAF50">{{ msg }}</h2>
+{% endif %}
+</body>
+</html>

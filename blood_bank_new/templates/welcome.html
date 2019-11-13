@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<style>
+    .btn{
+        padding: 4px;
+    }
+</style>
+<html>
+<body>
+{% if message %}
+    {% include "header.html" %}
+<img src="{% static 'images/admin.png' %}" style=" width:100px;height:100px;margin-left:50px;margin-top:-100px;">
+<h2 style="color: green; margin-left: 348px; margin-top: 50px;">{{ message }}</h2>
+<br>
+
+<div style="margin-top:-100px;">
+    {% include 'donorleft.html' %}
+</div>
+
+<br><br><br><br><br>
+<h2 style="color:purple">{{ msg }}</h2>
+<br><br><br>
+
+{% else %}
+{% include "header.html" %}
+<img src="{% static 'images/admin.png' %}" style=" width:100px;height:100px;margin-left:50px;margin-top:-100px;">
+<h2 style="color: green; margin-left: 348px; margin-top: 50px;">Welcome to Admin Dashboard</h2>
+<br>
+<div style="margin-top:-100px;"> {%  include 'left.html' %} </div>
+
+<br><br><br><br><br>
+<h2 style="color:purple">{{ msg }}</h2>
+<br><br><br>
+
+{% endif %}
+
+</body>
+</html>

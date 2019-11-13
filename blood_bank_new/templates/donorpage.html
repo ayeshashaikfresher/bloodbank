@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+{% include 'header.html' %}
+{% include 'leftpanel.html' %}
+<div style="margin-top: -150px;">
+<h3 style="margin-left:550px; color: green;">Donor Login</h3>
+<form action="{% url 'checkdonor' %}" method="post">
+ <table border="1" align="center" style="margin-left:500px; margin-top:-10px;">
+    {% csrf_token %}
+     <tr> <td>Donor Name: <input type="text" name="d1" required style="width:220px;"></td></tr>
+     <tr> <td>Donor Password:<input type="password" name="d2" required style="width: 200px;"></td></tr>
+     <tr><th><button type="submit">Login</button></th></tr>
+ </table>
+</form>
+    <h3 style="margin-left:550px; color: green;">Add New Donor</h3>
+    <a href="{% url 'donorreg' %}"><button type="button" style="margin-left:600px;height:30px;color: #4CAF50">Register</button></a>
+
+</div>
